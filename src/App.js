@@ -1,17 +1,17 @@
 import logoSvg from './assets/img/pizza-logo.svg'
 
-import { Header, Categories, SortPopup } from "./components";
+import {Header, Categories, SortPopup} from "./components";
 
 
 function App() {
     return (
         <div className="wrapper">
-            <Header />
+            <Header/>
             <div className="content">
                 <div className="container">
                     <div className="content__top">
-                        <Categories  items={['Мясные', 'Вегатарианская', 'Гриль', 'Острые', 'Закрытые']}/>
-<SortPopup />
+                        <Categories items={['Мясные', 'Вегатарианская', 'Гриль', 'Острые', 'Закрытые']}/>
+                        <SortPopup items={['популярности', 'цена', 'алфавит']}/>
                     </div>
                     <h2 className="content__title">Все пиццы</h2>
                     <div className="content__items">
