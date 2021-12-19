@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import classNames from "classnames";
+import PropTypes from "prop-types";
+
 
 function PizzaBlock({name, imageUrl, price, types, sizes}) {
 
@@ -74,5 +76,7 @@ function PizzaBlock({name, imageUrl, price, types, sizes}) {
         </div>
     );
 }
+
+
 
 export default PizzaBlock;
