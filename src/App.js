@@ -1,13 +1,29 @@
 import {Header} from "./components";
 import { Home, Cart }from "./pages";
 import {Routes, Route} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 function App() {
+
+const [pizzas, setPizzas] = useState([])
+
+
+    useEffect(() => {
+
+fetch('http://localhost:3000/db.json')
+    .then((resp) => resp.json())
+    .then((json) => {
+    setPizzas(json.pizzas);
+    });
+    },[])
+
+
+
     return (
         <div className="wrapper">
             <Header/>
             <div className="content">
-                <Routes> <Route path='/' element={<Home/>} />
+                <Routes> <Route path='/' element={<Home items={pizzas}/>} />
                     <Route path='/' element={<Home/>} exact />
                     <Route path='/cart' element={<Cart />} exact />
                 </Routes>
