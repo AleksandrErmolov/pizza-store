@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-function SortPopup({items}) {
+const SortPopup = React.memo(function SortPopup({items}) {
 
     const [visiblePopup ,setVisiblePopup] = useState(false)
     const sortRef = React.useRef()
@@ -19,9 +19,9 @@ function SortPopup({items}) {
 
 
     const handleOutsideClick = (e) => {
-       if (!e.path.includes(sortRef.current)){
-           setVisiblePopup(false)
-       }
+        if (!e.path.includes(sortRef.current)){
+            setVisiblePopup(false)
+        }
     }
     useEffect(() => {
         document.body.addEventListener("click", handleOutsideClick);
@@ -52,14 +52,14 @@ function SortPopup({items}) {
                 <div className="sort__popup">
                     <ul>
                         {items.map((obj, index) =>
-                        <li key={`${obj.type}_${index}`} className={acitveItem === index ? 'active' : ""}
-                            onClick={() => onSelectItem(index)}>{obj.name}</li>
+                            <li key={`${obj.type}_${index}`} className={acitveItem === index ? 'active' : ""}
+                                onClick={() => onSelectItem(index)}>{obj.name}</li>
                         )}
                     </ul>
                 </div>
             }
         </div>
     );
-}
+})
 
 export default SortPopup;
