@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 
 function Header () {
 
+
     return (
 
         <div className="header">
@@ -13,7 +14,7 @@ function Header () {
                     <div className="header__logo">
                         <img width="38" src={logoSvg} alt="Pizza logo" />
                         <div>
-                            <h1>React Pizza</h1>
+                            <h1>Pizza Club</h1>
                             <p>самая вкусная пицца во вселенной</p>
                         </div>
                     </div>
