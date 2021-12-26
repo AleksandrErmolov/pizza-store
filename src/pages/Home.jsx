@@ -22,7 +22,6 @@ function Home() {
     const isLoaded  = useSelector(({pizzas}) => pizzas.isLoaded);
     const {category, sortBy}  = useSelector(({filters}) => filters);
 
-    console.log()
 
 
     React.useEffect(() => {
@@ -69,7 +68,7 @@ const onSelectCategory =  React.useCallback((index) => {
                                 onClickAddPizza={handleAddPizzaToCart}
                                 key={item.id}
                                 isLoading={true}
-                                addedCount={cartItems[item.id] && cartItems[item.id].length}
+                                addedCount={cartItems[item.id] && cartItems[item.id].items.length}
                                 {...item} />
                 ))
                         : Array(12)
